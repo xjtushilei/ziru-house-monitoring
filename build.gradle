@@ -1,0 +1,45 @@
+buildscript {
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+    }
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+group = 'com.xjtushilei'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    runtime('com.h2database:h2')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    // aliyun-java-sdk-dm
+    compile group: 'com.aliyun', name: 'aliyun-java-sdk-dm', version: '3.3.1'
+    compile group: 'com.aliyun', name: 'aliyun-java-sdk-core', version: '3.0.0'
+    // jsoup
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+    //commons-io
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}

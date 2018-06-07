@@ -1,0 +1,27 @@
+---
+spring:
+  datasource:
+    password: sa
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:~/.houseMonitor
+    username: sa
+  jpa:
+    database: h2
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      settings:
+        web-allow-others: true
+      path: /h2
+      enabled: true
+server:
+  port: 8091
+my:
+  accessKeyId: xxxxxxxxxxxxxxxxxxx
+  setToAddress: xxxxx@xxxx.com,me@xxxx.com
+  secret: xxxxxxxxxxxxxxxxxxxxxxx
+  userName: 郭朝彤
+  URL: http://hz.ziroom.com/z/vr/60794035.html
+  oldImgURL: http://pic.ziroom.com/static/images/slist_1207/defaultPZZ/mumian-loading.jpg
+  setAccountName: xxxx@dm.xxxx.com
